@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const BreadCrumbs = () => {
   const location = useLocation();
-  console.log(location.pathname);
+  //console.log(location.pathname);
   let currentLink = "";
   const crumbs = location.pathname
     .split("/")
