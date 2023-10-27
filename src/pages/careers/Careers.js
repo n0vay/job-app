@@ -1,4 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
+
 export default function Careers() {
   const careers = useLoaderData();
   return (
@@ -17,5 +18,8 @@ export default function Careers() {
 
 export const careersLoader = async () => {
   const response = await fetch("http://localhost:4000/careers");
+  if (!response.ok) {
+    throw Error("Could not fetch the career details.");
+  }
   return response.json();
 };
